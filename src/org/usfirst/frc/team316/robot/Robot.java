@@ -26,7 +26,8 @@ public class Robot extends IterativeRobot {
 	//Climber
 	Victor climbMotor = new Victor(RobotMap.climberMotor);
 	DoubleSolenoid climbRelease = new DoubleSolenoid(RobotMap.forwardClimberChannel, RobotMap.backwardClimberChannel);
-	
+	int climberRelease;
+	double climberSpeed;
 	
     /**
      * This function is run when the robot is first started up and should be
