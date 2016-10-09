@@ -15,6 +15,11 @@ public class LunaLogitech extends Joystick {
 		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	 * Make getting Logitech joystick values easier and for practice
+	 * @author JakeMorris
+	 */
+	
 	public boolean getButton(int Button) {
 		return this.getRawButton(Button);
 	}

@@ -5,6 +5,10 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class LunaXBox extends Joystick {
 
+	boolean previousButton = false;
+	boolean currentButton = true;
+	boolean toggle = false;
+	
 	public LunaXBox(int port) {
 		super(port);
 		// TODO Auto-generated constructor stub
@@ -81,4 +85,17 @@ public class LunaXBox extends Joystick {
 	public double getRightTrigger() {
 		return this.getRawAxis(5);
 	}
+	
+	//Special Controls
+	public boolean toggle(boolean Button) {
+		previousButton = currentButton;
+		currentButton = Button;
+		if (currentButton && !previousButton) {
+			toggle = !toggle;
+		}
+		return toggle;
+	}
+	
+	
+	
 }
