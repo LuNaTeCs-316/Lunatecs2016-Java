@@ -14,7 +14,6 @@ public class LunaXBox extends Joystick {
 		super(port, numAxisTypes, numButtonTypes);
 		// TODO Auto-generated constructor stub
 	}
-
 	
 	//Buttons of an XBox controller
 	public boolean getAButton() {
