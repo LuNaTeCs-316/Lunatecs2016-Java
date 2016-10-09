@@ -6,8 +6,8 @@ package org.usfirst.frc.team316.robot;
 
 public class RobotMap {
 	//Joystick Ports
-	public static final int driverXBox = 1;
-	public static final int operatorXBox = 2;
+	public static final int driverXBoxUSB = 1;
+	public static final int operatorXBoxUSB = 2;
 	
 	//PWM outputs
 	public static final int climberMotor = 7;

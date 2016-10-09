@@ -2,13 +2,11 @@
 package org.usfirst.frc.team316.robot;
 
 
+
+import org.usfirst.frc.team316.robot.Subsystems.Climber;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-//import edu.wpi.first.wpilibj.Timer;
-//import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -20,21 +18,22 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class Robot extends IterativeRobot {
 	//DS Joysticks
-	Joystick driverXBox = new Joystick(RobotMap.driverXBox);
-	Joystick operatorXBox = new Joystick(RobotMap.operatorXBox);
+	Joystick driverXBox = new Joystick(RobotMap.driverXBoxUSB);
+	Joystick operatorXBox = new Joystick(RobotMap.operatorXBoxUSB);
 	
-	//Climber
-	Victor climbMotor = new Victor(RobotMap.climberMotor);
-	DoubleSolenoid climbRelease = new DoubleSolenoid(RobotMap.forwardClimberChannel, RobotMap.backwardClimberChannel);
-	int climberRelease;
-	double climberSpeed;
+	//Subsystems
+	Climber roboClimber = new Climber();
+	/*Make a drivetrain subsystem
+	 *Make a Shooter subsystem 
+	 *Have fun
+	 */
 	
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-        
+        roboClimber.initClimber();
     }
     
 	/**
@@ -61,7 +60,10 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        
+        if (true) {
+        	roboClimber.climberRelease();
+        	roboClimber.climberUp(driverXBox.getRawAxis(5));
+        }
     }
     
     /**
