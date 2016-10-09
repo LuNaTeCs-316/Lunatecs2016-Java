@@ -4,6 +4,9 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class LunaLogitech extends Joystick {
 
+	boolean previousButton = false;
+	boolean currentButton = true;
+	boolean toggle = false;
 	
 	public LunaLogitech(int port) {
 		super(port);
@@ -35,5 +38,17 @@ public class LunaLogitech extends Joystick {
 	public double getAxisZ() {
 		return this.getRawAxis(2);
 	}
+
+	//Special Controls
+	public boolean toggle(boolean Button) {
+		previousButton = currentButton;
+		currentButton = Button;
+		
+		if (currentButton && !previousButton) {
+			toggle = !toggle;
+		}
+		return toggle;
+	}
+
 }
 
