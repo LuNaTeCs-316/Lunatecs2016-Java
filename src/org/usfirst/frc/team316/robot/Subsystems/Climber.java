@@ -28,12 +28,16 @@ public class Climber extends Subsystem {
     	climbSpeed = 0.0;
     }
     
-    public void climberRelease() {
-    	climbRelease = true; //Only set because we can use it for returning values
-    	climbSolenoid.set(DoubleSolenoid.Value.kForward);
-    	
+    //Take in a button and release climber if true
+    public void climberRelease(boolean Button) {
+    	if (Button == true) {
+    		climbRelease = true; //Only set because we can use it for returning values
+    		climbSolenoid.set(DoubleSolenoid.Value.kForward);
+    	}
     }
     
+    
+    //Set the motor to the param of controller axis
     public void climberUp(double Axis) {
     	climbSpeed = Axis;
     	climbMotor.set(Axis);
@@ -41,11 +45,11 @@ public class Climber extends Subsystem {
     }
     
     //Getters
-    public boolean climberStatus() {
+    public boolean getclimberStatus() {
     	return climbRelease;
     }
     
-    public double climberSpeed() {
+    public double getclimberSpeed() {
     	return climbSpeed;
     }
 }

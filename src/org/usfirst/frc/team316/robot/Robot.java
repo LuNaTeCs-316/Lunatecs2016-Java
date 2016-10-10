@@ -1,12 +1,10 @@
-
 package org.usfirst.frc.team316.robot;
 
 
 
 import org.usfirst.frc.team316.robot.Subsystems.Climber;
-
+import org.usfirst.frc.team316.robot.OI;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Joystick;
 
 
 /**
@@ -18,14 +16,18 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class Robot extends IterativeRobot {
 	//DS Joysticks
-	Joystick driverXBox = new Joystick(RobotMap.driverXBoxUSB);
-	Joystick operatorXBox = new Joystick(RobotMap.operatorXBoxUSB);
+	//Joystick driverXBox = new Joystick(RobotMap.driverXBoxUSB);
+	//Joystick operatorXBox = new Joystick(RobotMap.operatorXBoxUSB);
+	LunaXBox driverStick = new LunaXBox(RobotMap.driverXBoxUSB);
+	LunaXBox operatorStick = new LunaXBox(RobotMap.operatorXBoxUSB);
+	
 	
 	//Subsystems
 	Climber roboClimber = new Climber();
-	/*Make a drivetrain subsystem
-	 *Make a Shooter subsystem 
-	 *Have fun
+	/*
+	 * Make a drivetrain subsystem
+	 * Make a Shooter subsystem 
+	 * Have fun
 	 */
 	
     /**
@@ -60,7 +62,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        
+    	roboClimber.climberRelease(OI.climb);
     }
     
     /**
