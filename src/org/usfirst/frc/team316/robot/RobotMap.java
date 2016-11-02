@@ -11,6 +11,9 @@ public class RobotMap {
 	
 	//PWM outputs
 	public static final int climberMotor = 7;
+	public static final int LeftPWM = 0;
+	public static final int RightPWM = 1;
+	
 	
 	//Solenoid Outputs
 	public static final int pneumaticsControlModule = 0;
