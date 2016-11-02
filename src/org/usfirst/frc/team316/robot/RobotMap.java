@@ -11,7 +11,7 @@ public class RobotMap {
 	
 	//PWM outputs
 	public static final int climberMotor = 7;
-	public static final int LeftPWM = 0;
+	public final int LeftPWM = 0;
 	public static final int RightPWM = 1;
 	
 	
