@@ -1,7 +1,5 @@
 package org.usfirst.frc.team316.robot;
 
-
-
 import org.usfirst.frc.team316.robot.Subsystems.Climber;
 import org.usfirst.frc.team316.robot.Subsystems.DriveTrain;
 
@@ -66,7 +64,10 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
     	roboClimber.climberRelease(OI.climb);
+    	
     	LunaChassis.arcadeDrive(driverStick.deadbandGetLeftY(.2), driverStick.deadbandGetRightX(.2));	//Drive in arcade drive with a deadband joystick with a threshold of .2
+    	
+    
     }
     
     /**
