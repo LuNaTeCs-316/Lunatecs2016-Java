@@ -20,12 +20,14 @@ public class Climber extends Subsystem {
 	boolean climbRelease;
 
     public void initDefaultCommand() {
-    	this.initClimber();
+    	this.init();	//Is this useful?
     }
     //Setters
-    public void initClimber() {
+    public void init() {
+    	System.out.println("Climber is initializing...");
     	climbRelease = false;
     	climbSpeed = 0.0;
+    	System.out.println("Climber Intialized");
     }
     
     //Take in a button and release climber if true

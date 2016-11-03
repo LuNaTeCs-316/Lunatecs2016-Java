@@ -3,7 +3,8 @@ package org.usfirst.frc.team316.robot;
 
 
 import org.usfirst.frc.team316.robot.Subsystems.Climber;
-import org.usfirst.frc.team316.robot.OI;
+import org.usfirst.frc.team316.robot.Subsystems.DriveTrain;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 
 
@@ -24,6 +25,7 @@ public class Robot extends IterativeRobot {
 	
 	//Subsystems
 	Climber roboClimber = new Climber();
+	DriveTrain LunaChassis = new DriveTrain();
 	/*
 	 * Make a drivetrain subsystem
 	 * Make a Shooter subsystem 
@@ -35,7 +37,8 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-        roboClimber.initClimber();
+        roboClimber.init();
+        LunaChassis.init();
     }
     
 	/**
@@ -63,6 +66,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
     	roboClimber.climberRelease(OI.climb);
+    	LunaChassis.arcadeDrive(driverStick.deadbandGetLeftY(.2), driverStick.deadbandGetRightX(.2));	//Drive in arcade drive with a deadband joystick with a threshold of .2
     }
     
     /**

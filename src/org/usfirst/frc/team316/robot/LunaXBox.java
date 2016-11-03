@@ -96,4 +96,36 @@ public class LunaXBox extends Joystick {
 		return toggle;
 	}
 	
+	public double deadbandGetLeftX(double threshold) {
+		if (Math.abs(this.getLeftStickX()) > threshold) {
+			return this.getLeftStickX();
+		} else {
+			return 0;
+		}
+	}
+	
+	public double deadbandGetLeftY(double threshold) {
+		if (Math.abs(this.getLeftStickY()) > threshold) {
+			return this.getLeftStickY();
+		} else {
+			return 0;
+		}
+	}
+	
+	public double deadbandGetRightX(double threshold) {
+		if (Math.abs(this.getRightStickX()) > threshold) {
+			return this.getRightStickX();
+		} else {
+			return 0;
+		}
+	}
+	
+	public double deadbandGetRightY(double threshold) {
+		if (Math.abs(this.getRightStickY()) > threshold) {
+			return this.getRightStickY();
+		} else {
+			return 0;
+		}
+	}
+	
 }
